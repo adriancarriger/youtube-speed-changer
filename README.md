@@ -2,6 +2,10 @@
 
 Work in progress: Change the speed of Youtube videos using this simple Chrome extension. Useful for transcribing music or speach.
 
+## Demo
+
+Checkout [the demo](https://chrome.google.com/webstore/detail/youtube-speed-changer/lpdejbagojlmdllknjdoonhkieeecpch) of this extension.
+
 ## Features
 
 - Change video speed
