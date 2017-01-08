@@ -31,7 +31,6 @@
   };
 
   const display = { percent: null, start: null };
-  // setup();
   document.addEventListener('DOMContentLoaded', setup);
   document.addEventListener('spfdone', setup); // Youtube page change event
   if (v.video !== undefined) {
