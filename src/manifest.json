@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Youtube Speed Changer",
+  "description": "This extension is just a test",
+  "version": "1.0",
+  "content_scripts": [{
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["contentscript.js"]
+  }],
+  "web_accessible_resources": ["script.js"],
+  "permissions": [
+   "activeTab"
+   ]
+}
