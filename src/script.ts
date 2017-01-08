@@ -1,7 +1,4 @@
 (() => {
-  const display = { percent: null, start: null };
-  document.addEventListener('DOMContentLoaded', setup);
-  document.addEventListener('spfdone', setup); // Youtube page change event
   const v = {
     video: document.querySelectorAll('video')[0],
     minutes: 0,
@@ -33,6 +30,14 @@
     round: (value, decimals) => value.toFixed(decimals)
   };
 
+  const display = { percent: null, start: null };
+  // setup();
+  document.addEventListener('DOMContentLoaded', setup);
+  document.addEventListener('spfdone', setup); // Youtube page change event
+  if (v.video !== undefined) {
+    setup();
+  }
+
   // Setup keybindings
   document.onkeypress = e => {
     if (e.keyCode === 32) { v.toggle(); } // spacebar
@@ -55,12 +60,13 @@
 
   // Setup current video
   function setup() {
+    v.video = document.querySelectorAll('video')[0];
     const referenceNode = document.getElementById('watch-header');
     const newNode = document.createElement('div');
     newNode.setAttribute('class', 'yt-uix-expander yt-card yt-card-has-padding');
     newNode.innerHTML = `
       <h1 style='padding-top: 5px;'>Youtube Speed Changer Extension</h1>
-      <div>Speed: <span id='ytsc-percent'>100</span>%</div>
+      <div>Speed: <span id='ytsc-percent'>100%</span></div>
       <div>Start point: <span id='ytsc-start'>0</span></div>
       <h2 style='padding-top: 10px;'>Keyboard Controls</h2>
       <ul>
