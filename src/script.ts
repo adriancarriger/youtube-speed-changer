@@ -4,7 +4,10 @@
     minutes: 0,
     seconds: 0,
     playing: true,
-    play: () => { v.video.play(); v.video.currentTime = (60 * v.minutes) + v.seconds; },
+    play: () => {
+      v.video.play();
+      v.video.currentTime = 60 * v.minutes + Number(v.seconds);
+    },
     pause: () => v.video.pause(),
     toggle: () => { v.playing = !v.playing; v.playing ? v.play() : v.pause(); },
     restart: () => v.play(),
@@ -25,6 +28,7 @@
     set: (t) => {
       v.minutes = Math.floor(t / 60);
       v.seconds =  v.round(t - v.minutes * 60, 1);
+      console.log(v.minutes, v.seconds);
       return `${v.minutes}:${v.seconds}`;
     },
     round: (value, decimals) => value.toFixed(decimals)
