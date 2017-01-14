@@ -9,7 +9,7 @@ Checkout [the demo](https://chrome.google.com/webstore/detail/youtube-speed-chan
 ## Features
 
 - Change video speed
-- Set a percise start point
+- Set a precise start point
 
 ## Basic Controls
 
