@@ -11,11 +11,17 @@
     pause: () => v.video.pause(),
     toggle: () => { v.playing = !v.playing; v.playing ? v.play() : v.pause(); },
     restart: () => v.play(),
-    speed: newPercent => { v.video.playbackRate = newPercent / 100; return Math.round(newPercent) + '%'; },
+    speed: newPercent => {
+      if (newPercent < 50) { newPercent = 50; }
+      if (newPercent > 400) { newPercent = 400; }
+      v.video.playbackRate = newPercent / 100;
+      return Math.round(newPercent) + '%';
+    },
     speedUp: () => v.speed(v.video.playbackRate * 100 + 5),
     slowDown: () => v.speed(v.video.playbackRate * 100 - 5),
     seek: change => {
-      const newT = v.video.currentTime + change;
+      let newT = v.video.currentTime + change;
+      if (newT < 0) { newT = 0; }
       v.video.currentTime = newT;
       return v.set(newT);
     },
