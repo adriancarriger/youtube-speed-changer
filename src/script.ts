@@ -43,7 +43,8 @@
 
   // Setup keybindings
   document.onkeypress = e => {
-    if (e.keyCode === 32) { v.toggle(); } // spacebar
+    const target: any = e.target || e.srcElement;
+    if ( target.tagName === 'INPUT' ) { return; }
     if (e.keyCode === 118) { v.toggle(); } // v
     if (e.keyCode === 100) { updateDisplay('percent', v.speedUp() ); } // d
     if (e.keyCode === 115) { updateDisplay('percent', v.slowDown() ); } // s
