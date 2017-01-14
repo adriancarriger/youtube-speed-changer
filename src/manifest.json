@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Youtube Speed Changer",
-  "description": "Change the speed of Youtube videos.",
+  "description": "Change the speed of Youtube videos. Useful for transcribing music or speech.",
   "version": "1.1.2",
   "content_scripts": [{
     "matches": ["*://*.youtube.com/*"],
