@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist/*.* && npm run build:other && npm run build:css && npm run build:js",
-    "build:js": "tsc -p ./src",
+    "build:js": "webpack",
     "build:css": "node-sass src/main.scss dist/main.css",
     "build:other": "cp src/*.{html,json} dist/",
     "lint": "tslint \"src/**/*.ts\""
@@ -15,9 +15,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.38",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
     "node-sass": "^4.1.1",
-    "nodemon": "^1.11.0",
     "tslint": "^4.3.1",
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.4",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "rxjs": "^5.0.3"
   }
 }
