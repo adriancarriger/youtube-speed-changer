@@ -4,7 +4,7 @@ export class YoutubeVideo {
   newSpeed: Subject<string> = new Subject();
   newStart: Subject<string> = new Subject();
   minutes = 0;
-  playing = false;
+  playing = true;
   seconds = 0;
   video: HTMLVideoElement;
   constructor() {
