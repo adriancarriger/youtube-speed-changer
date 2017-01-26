@@ -4,10 +4,6 @@ export class YoutubeDisplay {
   speed: HTMLElement;
   start: HTMLElement;
   constructor() {
-    this.init();
-  }
-  init() {
-
   }
   update(item: string, text: string) {
     this[item].innerHTML = text;
