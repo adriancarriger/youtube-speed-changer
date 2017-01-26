@@ -1,4 +1,11 @@
 ///<reference path="../node_modules/typescript/lib/lib.es6.d.ts"/> 
-import { YoutubeSpeed  } from './script/youtube-speed';
+import { YoutubeDisplay } from './script/display';
+import { YoutubeVideo } from './script/video';
+import { YoutubeController } from './script/youtube-controller';
 
-new YoutubeSpeed();
+(() => {
+  const video = new YoutubeVideo();
+  const display = new YoutubeDisplay();
+  new YoutubeController(video, display);
+})();
+
