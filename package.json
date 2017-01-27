@@ -1,6 +1,6 @@
 {
   "name": "youtube-speed-changer",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "An extension to change the speed of Youtube videos.",
   "main": "contentscript.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "build:css": "node-sass src/main.scss dist/main.css",
     "build:other": "cp src/*.{html,json} dist/",
     "lint": "tslint \"src/**/*.ts\"",
-    "deploy": "webstore upload --source dist"
+    "deploy": "webstore upload --source dist",
+    "patch": "bump ./package.json ./src/manifest.json -y"
   },
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",
   "license": "MIT",
@@ -24,6 +25,7 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "bump-cli": "^1.1.3",
     "rxjs": "^5.0.3"
   }
 }
