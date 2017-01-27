@@ -11,7 +11,7 @@
     "build:other": "copyfiles -f **/manifest.json **/popup.html dist",
     "lint": "tslint \"src/**/*.ts\"",
     "deploy": "webstore upload --source dist --auto-publish",
-    "deploy:git": "git -c user.name='travis' -c user.email='travis' commit -a -m 'chore(build): deploy new version'",
+    "deploy:git": "git -c user.name='travis' -c user.email='travis' commit -a -m 'chore(build): deploy new version' init",
     "patch": "bump ./package.json ./src/manifest.json -y",
     "bump": "npm run patch && npm run deploy:git"
   },

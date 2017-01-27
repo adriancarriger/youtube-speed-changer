@@ -16,7 +16,7 @@ after_success:
   # Send dist to Chrome Web Store
   - npm run deploy
   # Push changes to Github
-  - git push -f -q https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer &2>/dev/null
+  - git push -f -q https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer master &2>/dev/null
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
