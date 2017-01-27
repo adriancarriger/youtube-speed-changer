@@ -9,13 +9,15 @@
     "build:js": "webpack",
     "build:css": "node-sass src/main.scss dist/main.css",
     "build:other": "cp src/*.{html,json} dist/",
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\"",
+    "deploy": "webstore upload --source dist"
   },
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.38",
     "awesome-typescript-loader": "^3.0.0-beta.18",
+    "chrome-webstore-upload-cli": "^1.1.1",
     "node-sass": "^4.1.1",
     "tslint": "^4.3.1",
     "typescript": "^2.1.4",
