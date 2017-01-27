@@ -5,10 +5,10 @@
   "main": "contentscript.js",
   "scripts": {
     "test": "exit 0",
-    "build": "rm -rf dist/*.* && npm run build:other && npm run build:css && npm run build:js",
+    "build": "ls && echo 'testing...' && ls ./src && rm -rf dist/*.* && npm run build:other && npm run build:css && npm run build:js",
     "build:js": "webpack",
     "build:css": "node-sass src/main.scss dist/main.css",
-    "build:other": "cp src/*.{html,json} dist/",
+    "build:other": "cp ./src/*.{html,json} dist/",
     "lint": "tslint \"src/**/*.ts\"",
     "deploy": "webstore upload --source dist",
     "patch": "bump ./package.json ./src/manifest.json -y"
