@@ -9,8 +9,13 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 after_success:
+  # Bump version and commit changes
+  - npm run bump
+  # Build project with new version number
   - npm run build
+  # Send dist to Chrome Web Store
   - npm run deploy
+  # Push changes to Github
   - git push -f -q https://<me>:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer &2>/dev/null
 branches:
   except:
