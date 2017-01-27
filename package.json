@@ -5,10 +5,10 @@
   "main": "contentscript.js",
   "scripts": {
     "test": "exit 0",
-    "build": "rm -rf dist/*.* && npm run build:css && npm run build:js",
+    "build": "rm -rf dist/*.* && npm run build:other && npm run build:css && npm run build:js",
     "build:js": "webpack",
     "build:css": "node-sass src/main.scss dist/main.css",
-    "build:other": "cp ./src/*.{html,json} dist/",
+    "build:other": "copyfiles -f **/manifest.json **/popup.html dist",
     "lint": "tslint \"src/**/*.ts\"",
     "deploy": "webstore upload --source dist",
     "patch": "bump ./package.json ./src/manifest.json -y"
@@ -19,6 +19,7 @@
     "@types/chrome": "^0.0.38",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "chrome-webstore-upload-cli": "^1.1.1",
+    "copyfiles": "^1.1.0",
     "node-sass": "^4.1.1",
     "tslint": "^4.3.1",
     "typescript": "^2.1.4",
