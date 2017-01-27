@@ -10,7 +10,7 @@
     "build:css": "node-sass src/main.scss dist/main.css",
     "build:other": "copyfiles -f **/manifest.json **/popup.html dist",
     "lint": "tslint \"src/**/*.ts\"",
-    "deploy": "webstore upload --source dist",
+    "deploy": "webstore upload --source dist --auto-publish",
     "patch": "bump ./package.json ./src/manifest.json -y"
   },
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",
