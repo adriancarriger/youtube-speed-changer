@@ -4,7 +4,7 @@
   "description": "An extension to change the speed of Youtube videos.",
   "main": "contentscript.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "exit 0",
     "build": "rm -rf dist/*.* && npm run build:other && npm run build:css && npm run build:js",
     "build:js": "webpack",
     "build:css": "node-sass src/main.scss dist/main.css",
