@@ -11,7 +11,7 @@ before_install:
 after_success:
   # Setup Git
   - npm run git:setup
-  - git remote add upstream "https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/temp.git"
+  - git remote add upstream "https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer.git"
   - git fetch upstream
   # Bump version
   - npm run patch
