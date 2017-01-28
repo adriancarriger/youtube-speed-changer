@@ -14,7 +14,8 @@
     "patch": "bump ./package.json ./src/manifest.json -y && npm run commit:all",
     "bump": "npm run patch && npm run deploy:git",
     "git:setup": "git init && git config user.name 'travis' && git config user.email 'travis'",
-    "commit:all": "git add -A && git commit -m 'chore(build): bump version and deploy [ci skip]'"
+    "commit:all": "git add -A && git commit -m 'chore(build): bump version and deploy [ci skip]'",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "@types/chrome": "^0.0.38",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "chrome-webstore-upload-cli": "^1.1.1",
+    "conventional-changelog": "^1.1.0",
     "copyfiles": "^1.1.0",
     "node-sass": "4.3.0",
     "tslint": "^4.3.1",
