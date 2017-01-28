@@ -17,6 +17,8 @@ after_success:
   - npm run patch
   # Push
   - git push -q upstream HEAD:master
+  # Build project with new version number
+  - npm run build
   # Deploy
   - npm run deploy
 branches:
