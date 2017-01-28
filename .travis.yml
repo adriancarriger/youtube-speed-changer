@@ -9,15 +9,16 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 after_success:
-  # Bump version and commit changes
-  - npm run bump
-  # Build project with new version number
-  - npm run build
-  # Send dist to Chrome Web Store
+  # Setup Git
+  - npm run git:setup
+  - git remote add upstream "https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/temp.git"
+  - git fetch upstream
+  # Bump version
+  - npm run patch
+  # Push
+  - git push -q upstream HEAD:master
+  # Deploy
   - npm run deploy
-  # Push changes to Github
-  - git push -f https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer master
-  - git status
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
