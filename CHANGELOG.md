@@ -12,63 +12,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-<a name="1.3.0"></a>
-# [1.3.0](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.1.8...v1.3.0) (2017-01-29)
-
-
-### Bug Fixes
-
-* **build:** add standard-version to package.json ([b88a2f3](https://github.com/adriancarriger/youtube-speed-changer/commit/b88a2f3))
-
-
-### Features
-
-* **template:** add ⚡  to title ([e5a150b](https://github.com/adriancarriger/youtube-speed-changer/commit/e5a150b))
-
-
-
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.1.8...v1.2.0) (2017-01-29)
 
 
-### Bug Fixes
-
-* **build:** add standard-version to package.json ([b88a2f3](https://github.com/adriancarriger/youtube-speed-changer/commit/b88a2f3))
-
-
 ### Features
 
 * **template:** add ⚡  to title ([e5a150b](https://github.com/adriancarriger/youtube-speed-changer/commit/e5a150b))
-
-
-
-<a name="1.1.12"></a>
-## [1.1.12](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.1.8...v1.1.12) (2017-01-29)
-
-
-### Bug Fixes
-
-* **build:** add standard-version to package.json ([b88a2f3](https://github.com/adriancarriger/youtube-speed-changer/commit/b88a2f3))
-
-
-
-<a name="1.1.11"></a>
-## [1.1.11](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.1.8...v1.1.11) (2017-01-29)
-
-
-### Bug Fixes
-
-* **build:** add standard-version to package.json ([b88a2f3](https://github.com/adriancarriger/youtube-speed-changer/commit/b88a2f3))
-
-
-
-<a name="1.1.10"></a>
-## [1.1.10](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.1.8...v1.1.10) (2017-01-29)
-
-
-### Bug Fixes
-
-* **build:** add standard-version to package.json ([b88a2f3](https://github.com/adriancarriger/youtube-speed-changer/commit/b88a2f3))
 
 
 
