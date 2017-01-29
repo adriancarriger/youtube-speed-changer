@@ -1,5 +1,5 @@
 export const DisplayTemplate = `
-<h1 style='padding-top: 5px;'>Youtube Speed Changer Extension</h1>
+<h1 style='padding-top: 5px;'>⚡ Youtube Speed Changer Extension</h1>
 <div>Speed: <span id='ytsc-speed'>100%</span></div>
 <div>Start point: <span id='ytsc-start'>0</span></div>
 <div class="yt-uix-expander-body">
