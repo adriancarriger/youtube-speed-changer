@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.9"></a>
+## [1.1.9](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.1.8...v1.1.9) (2017-01-29)
+
+
+### Bug Fixes
+
+* **build:** add standard-version to package.json ([b88a2f3](https://github.com/adriancarriger/youtube-speed-changer/commit/b88a2f3))
+
+
+
 <a name="1.1.8"></a>
 ## 1.1.8 (2017-01-29)
 
