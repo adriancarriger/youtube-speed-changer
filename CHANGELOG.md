@@ -1,5 +1,9 @@
-<a name="1.1.7"></a>
-## 1.1.7 (2017-01-28)
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.1.8"></a>
+## 1.1.8 (2017-01-29)
 
 
 ### Bug Fixes
@@ -25,6 +29,3 @@
 * **popup:** add keyboard hints to popup ([12e12f6](https://github.com/adriancarriger/youtube-speed-changer/commit/12e12f6))
 * **script:** add speed and seek limits ([08eb82d](https://github.com/adriancarriger/youtube-speed-changer/commit/08eb82d))
 * **script:** move controls to hidden toggle box ([3788e11](https://github.com/adriancarriger/youtube-speed-changer/commit/3788e11))
-
-
-
