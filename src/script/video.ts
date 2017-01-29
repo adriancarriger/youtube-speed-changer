@@ -44,9 +44,6 @@ export class YoutubeVideo {
     this.playing = !this.playing;
     this.playing ? this.play() : this.pause();
   }
-  setCurrent() {
-    this.set(this.video.currentTime);
-  }
   private pause() {
     this.video.pause();
   }
