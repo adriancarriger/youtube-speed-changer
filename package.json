@@ -13,7 +13,7 @@
     "deploy": "webstore upload --source dist --auto-publish",
     "patch": "bump ./package.json ./src/manifest.json -y && npm run commit:all",
     "git:setup": "git init && git config user.name 'travis' && git config user.email 'travis'",
-    "release": "npm run manifest && standard-version -a -m 'chore(release): %s [ci skip]' && npm run manifest",
+    "release": "standard-version -m 'chore(release): %s [ci skip]' && npm run manifest",
     "manifest": "node ./scripts/copy-version.js"
   },
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",

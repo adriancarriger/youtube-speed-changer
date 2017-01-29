@@ -1,1 +1,17 @@
-{"manifest_version":2,"name":"Youtube Speed Changer","description":"Change the speed of Youtube videos. Useful for transcribing music or speech.","version":"1.1.10","content_scripts":[{"matches":["*://*.youtube.com/*"],"js":["contentscript.js"]}],"web_accessible_resources":["script.js"],"permissions":["activeTab"],"browser_action":{"default_popup":"popup.html"}}
+{
+  "manifest_version": 2,
+  "name": "Youtube Speed Changer",
+  "description": "Change the speed of Youtube videos. Useful for transcribing music or speech.",
+  "version": "0.0.0-development",
+  "content_scripts": [{
+    "matches": ["*://*.youtube.com/*"],
+    "js": ["contentscript.js"]
+  }],
+  "web_accessible_resources": ["script.js"],
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
