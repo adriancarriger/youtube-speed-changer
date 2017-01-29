@@ -19,4 +19,21 @@ describe('Controller: YoutubeController', () => {
   it('should create the controller', () => {
     expect(controller).toBeTruthy();
   });
+
+  it('should slow down the video by 5%', () => {
+    expect( speed(youtubeVideo) ).toEqual(100);
+    keypress(115); // key: s
+    expect( speed(youtubeVideo) ).toEqual(95);
+  });
 });
+
+function keypress(character: number) {
+  const event: any = document.createEvent('Event');
+  event.keyCode = character;
+  event.initEvent('keypress');
+  document.dispatchEvent(event);
+}
+
+function speed(youtubeVideo: YoutubeVideo): number {
+  return youtubeVideo.video.playbackRate * 100;
+}
