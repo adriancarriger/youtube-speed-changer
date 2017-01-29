@@ -6,7 +6,7 @@ const manifest = require(mPath);
 
 if (version !== manifest.version) {
   manifest.version = version;
-  fs.writeFile(mPath, JSON.stringify(manifest), err => {
+  fs.writeFile(mPath, JSON.stringify(manifest, null, 2), err => {
     if (err) return console.log(err);
   });
 }
