@@ -51,6 +51,39 @@ describe('Controller: YoutubeController', () => {
     keypress(118); // key: v
     expect( youtubeVideo.playing ).toEqual(true);
   });
+
+  it('should seek forward by 1 second', () => {
+    expect( youtubeVideo.video.currentTime ).toEqual(0);
+    keypress(114); // key: r
+    expect( youtubeVideo.video.currentTime ).toEqual(1);
+    keypress(114); // key: r
+    keypress(114); // key: r
+    expect( youtubeVideo.video.currentTime ).toEqual(3);
+  });
+
+  it('should seek forwards and backwards by 1 second', () => {
+    expect( youtubeVideo.video.currentTime ).toEqual(0);
+    keypress(114); // key: r
+    keypress(114); // key: r
+    expect( youtubeVideo.video.currentTime ).toEqual(2);
+    keypress(113); // q
+    expect( youtubeVideo.video.currentTime ).toEqual(1);
+    keypress(113); // q
+    expect( youtubeVideo.video.currentTime ).toEqual(0);
+    keypress(113); // q
+    expect( youtubeVideo.video.currentTime ).toEqual(0);
+  });
+
+  it('should seek by 0.1 seconds', () => {
+    expect( mill(youtubeVideo) ).toEqual(0);
+    keypress(101); // key: e
+    expect( mill(youtubeVideo) ).toEqual(100);
+    keypress(101); // key: e
+    keypress(101); // key: e
+    expect( mill(youtubeVideo) ).toEqual(300);
+    keypress(119); // key: w
+    expect( mill(youtubeVideo) ).toEqual(200);
+  });
 });
 
 function keypress(character: number) {
@@ -62,4 +95,8 @@ function keypress(character: number) {
 
 function speed(youtubeVideo: YoutubeVideo): number {
   return youtubeVideo.video.playbackRate * 100;
+}
+
+function mill(youtubeVideo: YoutubeVideo): number {
+  return Math.round( youtubeVideo.video.currentTime * 1000 );
 }
