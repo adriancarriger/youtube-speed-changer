@@ -1,6 +1,6 @@
 {
   "name": "youtube-speed-changer",
-  "version": "1.1.9",
+  "version": "1.1.8",
   "description": "An extension to change the speed of Youtube videos.",
   "main": "contentscript.js",
   "scripts": {
@@ -12,10 +12,8 @@
     "lint": "tslint \"src/**/*.ts\"",
     "deploy": "webstore upload --source dist --auto-publish",
     "patch": "bump ./package.json ./src/manifest.json -y && npm run commit:all",
-    "bump": "npm run patch && npm run deploy:git",
     "git:setup": "git init && git config user.name 'travis' && git config user.email 'travis'",
-    "commit:all": "git add -A && git commit -m 'chore(build): bump version and deploy [ci skip]'",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "release": "standard-version -m 'chore(release): %s [ci skip]'"
   },
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",
   "license": "MIT",

@@ -14,7 +14,7 @@ after_success:
   - git remote add upstream "https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer.git"
   - git fetch upstream
   # Bump version
-  - npm run patch
+  - npm run release
   # Push
   - git push -q upstream HEAD:master
   # Build project with new version number
