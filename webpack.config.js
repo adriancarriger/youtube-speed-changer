@@ -12,15 +12,18 @@ module.exports = {
   // Turn on sourcemaps
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+    extensions: ['.webpack.js', '.web.js', '.ts', '.js']
   },
   // Add minification
   plugins: [
     // new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
-    loaders: [
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' }
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'awesome-typescript-loader'
+      }
     ]
   }
 }
