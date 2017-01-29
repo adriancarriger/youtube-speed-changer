@@ -16,7 +16,7 @@ after_success:
   # Bump version
   - npm run release
   # Push
-  - git push -q upstream HEAD:master
+  - git push --follow-tags -q upstream HEAD:master
   # Build project with new version number
   - npm run build
   # Deploy
