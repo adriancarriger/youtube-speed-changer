@@ -18,6 +18,7 @@ after_success:
   # Push
   - git push --follow-tags -q upstream HEAD:master
   # Build project with new version number
+  - npm rebuild node-sass # Temp fix - related: https://github.com/sass/node-sass/issues/1579
   - npm run build
   # Deploy
   - npm run deploy
