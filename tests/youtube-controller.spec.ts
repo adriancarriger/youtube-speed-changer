@@ -14,11 +14,7 @@ describe('Controller: YoutubeController', () => {
     youtubeVideo = new YoutubeVideo();
     youtubeDisplay = new YoutubeDisplay();
     controller = new YoutubeController(youtubeVideo, youtubeDisplay);
-    console.log('ready state:', youtubeVideo.video.readyState);
-    youtubeVideo.video.addEventListener('loadedmetadata', () => {
-        console.log('loaded in test');
-      done();
-    });
+    setTimeout(() => done(), 1000);
   });
 
   it('should create the controller', () => {
