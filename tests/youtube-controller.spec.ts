@@ -9,11 +9,14 @@ describe('Controller: YoutubeController', () => {
   let youtubeMock = new YoutubeMock();
   let youtubeVideo: YoutubeVideo;
 
-  beforeEach(() => {
+  beforeEach(done => {
     youtubeMock.setup();
     youtubeVideo = new YoutubeVideo();
     youtubeDisplay = new YoutubeDisplay();
     controller = new YoutubeController(youtubeVideo, youtubeDisplay);
+    youtubeVideo.video.addEventListener('loadedmetadata', () => {
+      done();
+    });
   });
 
   it('should create the controller', () => {
