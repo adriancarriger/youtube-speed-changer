@@ -15,6 +15,7 @@ describe('Controller: YoutubeController', () => {
     youtubeDisplay = new YoutubeDisplay();
     controller = new YoutubeController(youtubeVideo, youtubeDisplay);
     youtubeVideo.video.addEventListener('loadedmetadata', () => {
+        console.log('loaded in test');
       done();
     });
   });

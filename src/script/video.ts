@@ -33,6 +33,8 @@ export class YoutubeVideo {
   }
   setup() {
     this.video = document.querySelectorAll('video')[0];
+    console.log('setting up');
+    this.video.addEventListener('loadedmetadata', () => console.log('just loaded!!'));
   }
   speedUp() {
     this.speed(this.video.playbackRate * 100 + 5);
