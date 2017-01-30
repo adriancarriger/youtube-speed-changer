@@ -15,7 +15,7 @@ export class YoutubeMock {
   setup() {
     this.testContainer.innerHTML = null;
     this.testContainer.innerHTML = `
-    <video controls="" autoplay="" name="media" autoplay>
+    <video controls preload="none" controls poster="screen_shot.png" name="media" autoplay>
       <source src="${this.projectRoot}/assets/big_buck_bunny.mp4" type="video/mp4">
     </video>
     <div id="watch-header"></div>`;
