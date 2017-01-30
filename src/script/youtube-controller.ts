@@ -11,7 +11,7 @@ export class YoutubeController {
     this.addKeybindings();
     if (this.video.video !== undefined) {
       console.log('video was already defined yay!');
-      this.setup();
+      // this.setup();
     }
     document.addEventListener('DOMContentLoaded', () => {
       console.log('dom loaded');
