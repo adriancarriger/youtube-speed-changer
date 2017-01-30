@@ -2,9 +2,11 @@ import { YoutubeDisplay } from './display';
 import { YoutubeVideo } from './video';
 
 export class YoutubeController {
+  boundSetup: EventListener;
   constructor(
     private video: YoutubeVideo,
     private display: YoutubeDisplay) {
+    this.boundSetup = () => this.setup();
     this.init();
   }
   init() {
@@ -12,9 +14,13 @@ export class YoutubeController {
     if (this.video.video !== undefined) {
       this.setup();
     }
-    document.addEventListener('DOMContentLoaded', () => this.setup());
+    document.addEventListener('DOMContentLoaded', this.boundSetup);
     // Youtube page change event
-    document.addEventListener('spfdone', () => this.setup());
+    document.addEventListener('spfdone', this.boundSetup);
+  }
+  destroy() {
+    document.removeEventListener('DOMContentLoaded', this.boundSetup);
+    document.removeEventListener('spfdone', this.boundSetup);
   }
   addKeybindings() {
     document.onkeypress = e => this.onKeypress(e);

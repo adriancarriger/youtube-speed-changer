@@ -8,6 +8,7 @@ describe('Controller: YoutubeController', () => {
   let youtubeDisplay: YoutubeDisplay;
   let youtubeMock = new YoutubeMock();
   let youtubeVideo = new YoutubeVideo();
+  const searchBar = document.getElementById('search-bar');
 
   beforeAll(done => {
     youtubeVideo.video.addEventListener('loadedmetadata', () => done());
@@ -17,6 +18,11 @@ describe('Controller: YoutubeController', () => {
     youtubeDisplay = new YoutubeDisplay();
     reset(youtubeVideo);
     controller = new YoutubeController(youtubeVideo, youtubeDisplay);
+  });
+
+  afterEach(() => {
+    controller.destroy();
+    cleanup();
   });
 
   it('should create the controller', () => {
@@ -111,6 +117,65 @@ describe('Controller: YoutubeController', () => {
     keypress(100); // key: d
     expect( speed(youtubeVideo) ).toEqual(400);
   });
+
+  it('should do nothing for unassigned keys', () => {
+    expect( mill(youtubeVideo) ).toEqual(0);
+    expect( speed(youtubeVideo) ).toEqual(100);
+    for (let i = 0; i < 20; i++) {
+      keypress(121 + i);
+    }
+    expect( mill(youtubeVideo) ).toEqual(0);
+    expect( speed(youtubeVideo) ).toEqual(100);
+  });
+
+  it('should speed up using srcElement', () => {
+    const e1: any = {
+      keyCode: 100,
+      target: {
+        tagName: 'DIV'
+      }
+    };
+    const e2: any = {
+      keyCode: 100,
+      srcElement: {
+        tagName: 'INPUT'
+      }
+    };
+    expect( speed(youtubeVideo) ).toEqual(100);
+    controller.onKeypress(e1);
+    expect( speed(youtubeVideo) ).toEqual(105);
+    controller.onKeypress(e2);
+    expect( speed(youtubeVideo) ).toEqual(105);
+  });
+
+  it('should reset video on DOMContentLoaded', () => {
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
+    cleanup();
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(0);
+    const event: any = document.createEvent('Event');
+    event.initEvent('DOMContentLoaded');
+    document.dispatchEvent(event);
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
+  });
+
+  it('should reset video on spfdone', () => {
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
+    cleanup();
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(0);
+    const event: any = document.createEvent('Event');
+    event.initEvent('spfdone');
+    document.dispatchEvent(event);
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
+  });
+
+  it('should only setup if video is defined', () => {
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
+    cleanup();
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(0);
+    youtubeVideo.video = undefined;
+    controller.init();
+    expect( document.getElementsByClassName('yt-card').length ).toEqual(0);
+  });
 });
 
 function keypress(character: number) {
@@ -135,4 +200,11 @@ function reset(youtubeVideo: YoutubeVideo) {
   youtubeVideo.video.currentTime = 0;
   youtubeVideo.playing = true;
   youtubeVideo.video.play();
+}
+
+function cleanup() {
+  const info = document.getElementsByClassName('yt-card');
+  for (let i = 0; i < info.length; i++) {
+    info[i].parentNode.removeChild(info[i]);
+  }
 }
