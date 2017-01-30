@@ -9,6 +9,8 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 after_success:
+  # Send coverage data to Codecov
+  - bash <(curl -s https://codecov.io/bash)
   # Setup Git
   - npm run git:setup
   - git remote add upstream "https://adriancarriger:$GH_TOKEN@github.com/adriancarriger/youtube-speed-changer.git"
@@ -17,8 +19,6 @@ after_success:
   - npm run release
   # Push
   - git push --follow-tags -q upstream HEAD:master &2>/dev/null
-  # Send coverage data to Codecov
-  - bash <(curl -s https://codecov.io/bash)
   # Build project with new version number
   - npm rebuild node-sass # Temp fix - related: https://github.com/sass/node-sass/issues/1579
   - npm run build
