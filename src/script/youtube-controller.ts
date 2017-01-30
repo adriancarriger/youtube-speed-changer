@@ -12,7 +12,10 @@ export class YoutubeController {
     if (this.video.video !== undefined) {
       this.setup();
     }
-    document.addEventListener('DOMContentLoaded', () => this.setup());
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('dom loaded');
+      this.setup();
+    });
     // Youtube page change event
     document.addEventListener('spfdone', () => this.setup());
   }
