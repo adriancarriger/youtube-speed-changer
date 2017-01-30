@@ -7,12 +7,15 @@ describe('Controller: YoutubeController', () => {
   let controller: YoutubeController;
   let youtubeDisplay: YoutubeDisplay;
   let youtubeMock = new YoutubeMock();
-  let youtubeVideo: YoutubeVideo;
+  let youtubeVideo = new YoutubeVideo();
+
+  beforeAll(done => {
+    youtubeVideo.video.addEventListener('loadedmetadata', () => done());
+  });
 
   beforeEach(() => {
-    youtubeMock.setup();
-    youtubeVideo = new YoutubeVideo();
     youtubeDisplay = new YoutubeDisplay();
+    reset(youtubeVideo);
     controller = new YoutubeController(youtubeVideo, youtubeDisplay);
   });
 
@@ -99,4 +102,13 @@ function speed(youtubeVideo: YoutubeVideo): number {
 
 function mill(youtubeVideo: YoutubeVideo): number {
   return Math.round( youtubeVideo.video.currentTime * 1000 );
+}
+
+function reset(youtubeVideo: YoutubeVideo) {
+  youtubeVideo.minutes = 0;
+  youtubeVideo.seconds = 0;
+  youtubeVideo.video.playbackRate = 1;
+  youtubeVideo.video.currentTime = 0;
+  youtubeVideo.playing = true;
+  youtubeVideo.video.play();
 }

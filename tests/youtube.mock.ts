@@ -10,13 +10,11 @@ export class YoutubeMock {
       this.testContainer = document.createElement('div');
       this.testContainer.setAttribute('id', 'test-container');
       document.body.insertBefore(this.testContainer, document.body.childNodes[0]);
+      this.testContainer.innerHTML = `
+        <video controls="" autoplay="" name="media" autoplay>
+          <source src="${this.projectRoot}/assets/big_buck_bunny.mp4" type="video/mp4">
+        </video>
+        <div id="watch-header"></div>`;
     }
-  }
-  setup() {
-    this.testContainer.innerHTML = `
-    <video controls="" autoplay="" name="media" autoplay>
-      <source src="${this.projectRoot}/assets/big_buck_bunny.mp4" type="video/mp4">
-    </video>
-    <div id="watch-header"></div>`;
   }
 }
