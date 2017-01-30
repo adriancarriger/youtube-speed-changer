@@ -10,14 +10,15 @@ export class YoutubeController {
   init() {
     this.addKeybindings();
     if (this.video.video !== undefined) {
+      console.log('video was already defined yay!');
       this.setup();
     }
     document.addEventListener('DOMContentLoaded', () => {
       console.log('dom loaded');
-      this.setup();
+      // this.setup();
     });
     // Youtube page change event
-    document.addEventListener('spfdone', () => this.setup());
+    // document.addEventListener('spfdone', () => this.setup());
   }
   addKeybindings() {
     document.onkeypress = e => this.onKeypress(e);
