@@ -14,7 +14,7 @@ describe('Controller: YoutubeController', () => {
     youtubeVideo = new YoutubeVideo();
     youtubeDisplay = new YoutubeDisplay();
     controller = new YoutubeController(youtubeVideo, youtubeDisplay);
-    setTimeout(() => done(), 1000);
+    setTimeout(() => done(), 1500);
   });
 
   it('should create the controller', () => {
