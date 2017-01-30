@@ -87,6 +87,30 @@ describe('Controller: YoutubeController', () => {
     keypress(119); // key: w
     expect( mill(youtubeVideo) ).toEqual(200);
   });
+
+  it('should not go slower than 50%', () => {
+    expect( speed(youtubeVideo) ).toEqual(100);
+    for (let i = 0; i < 9; i++) {
+      keypress(115); // key: s
+    }
+    expect( speed(youtubeVideo) ).toEqual(55);
+    keypress(115); // key: s
+    expect( speed(youtubeVideo) ).toEqual(50);
+    keypress(115); // key: s
+    expect( speed(youtubeVideo) ).toEqual(50);
+  });
+
+  it('should not go faster than 400%', () => {
+    expect( speed(youtubeVideo) ).toEqual(100);
+    for (let i = 0; i < 59; i++) {
+      keypress(100); // key: d
+    }
+    expect( speed(youtubeVideo) ).toEqual(395);
+    keypress(100); // key: d
+    expect( speed(youtubeVideo) ).toEqual(400);
+    keypress(100); // key: d
+    expect( speed(youtubeVideo) ).toEqual(400);
+  });
 });
 
 function keypress(character: number) {
@@ -97,7 +121,7 @@ function keypress(character: number) {
 }
 
 function speed(youtubeVideo: YoutubeVideo): number {
-  return youtubeVideo.video.playbackRate * 100;
+  return Math.round( youtubeVideo.video.playbackRate * 100 );
 }
 
 function mill(youtubeVideo: YoutubeVideo): number {
