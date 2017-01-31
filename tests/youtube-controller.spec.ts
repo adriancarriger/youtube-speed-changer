@@ -168,6 +168,13 @@ describe('Controller: YoutubeController', () => {
     expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
   });
 
+  it('should set a start point', () => {
+    youtubeVideo.video.currentTime = 7;
+    expect( youtubeVideo.seconds ).toEqual(0);
+    keypress(116); // key: t
+    expect( youtubeVideo.seconds ).toEqual('7.0');
+  });
+
   it('should only setup if video is defined', () => {
     expect( document.getElementsByClassName('yt-card').length ).toEqual(1);
     cleanup();

@@ -31,6 +31,9 @@ export class YoutubeVideo {
   forwards() {
     this.seek(1);
   }
+  setCurrent() {
+    this.set(this.video.currentTime);
+  }
   setup() {
     this.video = document.querySelectorAll('video')[0];
   }
