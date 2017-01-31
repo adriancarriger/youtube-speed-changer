@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.12"></a>
+## [1.4.12](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.4.11...v1.4.12) (2017-01-31)
+
+
+### Bug Fixes
+
+* **video:** add back public setCurrent method ([5407a73](https://github.com/adriancarriger/youtube-speed-changer/commit/5407a73))
+
+
+
 <a name="1.4.11"></a>
 ## [1.4.11](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.4.10...v1.4.11) (2017-01-30)
 
