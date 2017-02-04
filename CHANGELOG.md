@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.0...v1.5.1) (2017-02-04)
+
+
+### Bug Fixes
+
+* **video:** only remove listeners if video exists ([3eb539b](https://github.com/adriancarriger/youtube-speed-changer/commit/3eb539b))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.4.17...v1.5.0) (2017-02-04)
 
