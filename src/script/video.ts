@@ -7,11 +7,17 @@ export class YoutubeVideo {
   playing = true;
   seconds = 0;
   video: HTMLVideoElement;
+  // Bound to play/pause
+  boundPlay: EventListener;
+  boundPause: EventListener;
+  boundSpeed: EventListener;
+  // New speed
   constructor() {
     this.init();
   }
   init() {
     this.setup();
+    this.addListeners();
   }
   backwards() {
     this.seek(-1);
@@ -28,6 +34,9 @@ export class YoutubeVideo {
   bitSlower() {
     this.speed(this.video.playbackRate * 100 - 1);
   }
+  destroy() {
+    this.removeListeners();
+  }
   forwards() {
     this.seek(1);
   }
@@ -36,6 +45,7 @@ export class YoutubeVideo {
   }
   setup() {
     this.video = document.querySelectorAll('video')[0];
+    this.emitSpeed();
   }
   speedUp() {
     this.speed(this.video.playbackRate * 100 + 5);
@@ -47,12 +57,33 @@ export class YoutubeVideo {
     this.playing = !this.playing;
     this.playing ? this.play() : this.pause();
   }
+  private addListeners() {
+    // Play
+    this.boundPlay = () => this.playing = true;
+    this.video.addEventListener('play', this.boundPlay);
+    // Pause
+    this.boundPause = () => this.playing = false;
+    this.video.addEventListener('pause', this.boundPause);
+    // Speed change
+    this.boundSpeed = () => this.emitSpeed();
+    this.video.addEventListener('ratechange', this.boundSpeed);
+  }
+  private emitSpeed() {
+    const asdf = '' + Math.round(this.video.playbackRate * 100);
+    console.log('emitting', asdf);
+    this.newSpeed.next(asdf + '%');
+  }
   private pause() {
     this.video.pause();
   }
   private play() {
     this.video.play();
     this.video.currentTime = 60 * this.minutes + Number(this.seconds);
+  }
+  private removeListeners() {
+    this.video.removeEventListener('play', this.boundPlay);
+    this.video.removeEventListener('pause', this.boundPause);
+    this.video.removeEventListener('ratechange', this.boundSpeed);
   }
   private round(value, decimals) {
     return value.toFixed(decimals);
@@ -72,6 +103,5 @@ export class YoutubeVideo {
     if (newPercent < 50) { newPercent = 50; }
     if (newPercent > 400) { newPercent = 400; }
     this.video.playbackRate = newPercent / 100;
-    this.newSpeed.next(Math.round(newPercent) + '%');
   }
 }
