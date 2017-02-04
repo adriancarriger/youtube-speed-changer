@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.4"></a>
+## [1.5.4](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.3...v1.5.4) (2017-02-04)
+
+
+### Bug Fixes
+
+* **video:** allow loading homepage first ([35737d6](https://github.com/adriancarriger/youtube-speed-changer/commit/35737d6))
+
+
+
 <a name="1.5.3"></a>
 ## [1.5.3](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.2...v1.5.3) (2017-02-04)
 
