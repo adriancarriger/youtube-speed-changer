@@ -69,9 +69,7 @@ export class YoutubeVideo {
     this.video.addEventListener('ratechange', this.boundSpeed);
   }
   private emitSpeed() {
-    const asdf = '' + Math.round(this.video.playbackRate * 100);
-    console.log('emitting', asdf);
-    this.newSpeed.next(asdf + '%');
+    this.newSpeed.next(Math.round(this.video.playbackRate * 100) + '%');
   }
   private pause() {
     this.video.pause();
