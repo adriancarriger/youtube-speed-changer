@@ -10,6 +10,7 @@ export class YoutubeDisplay {
   }
   setup() {
     const referenceNode = document.getElementById('watch-header');
+    if (referenceNode === null) { return; }
     const newNode = document.createElement('div');
     newNode.setAttribute('class', 'yt-uix-expander yt-card yt-card-has-padding yt-uix-expander-collapsed');
     newNode.innerHTML = DisplayTemplate;

@@ -1,8 +1,8 @@
-import { Subject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 
 export class YoutubeVideo {
-  newSpeed: Subject<string> = new Subject();
-  newStart: Subject<string> = new Subject();
+  newSpeed: ReplaySubject<string> = new ReplaySubject();
+  newStart: ReplaySubject<string> = new ReplaySubject();
   minutes = 0;
   playing = true;
   seconds = 0;
@@ -11,13 +11,13 @@ export class YoutubeVideo {
   boundPlay: EventListener;
   boundPause: EventListener;
   boundSpeed: EventListener;
+  listening = false;
   // New speed
   constructor() {
     this.init();
   }
   init() {
     this.setup();
-    this.addListeners();
   }
   backwards() {
     this.seek(-1);
@@ -45,7 +45,10 @@ export class YoutubeVideo {
   }
   setup() {
     this.video = document.querySelectorAll('video')[0];
-    this.emitSpeed();
+    if (this.video !== undefined) {
+      this.emitSpeed();
+      if (!this.listening) { this.addListeners(); }
+    }
   }
   speedUp() {
     this.speed(this.video.playbackRate * 100 + 5);
@@ -67,6 +70,7 @@ export class YoutubeVideo {
     // Speed change
     this.boundSpeed = () => this.emitSpeed();
     this.video.addEventListener('ratechange', this.boundSpeed);
+    this.listening = true;
   }
   private emitSpeed() {
     this.newSpeed.next(Math.round(this.video.playbackRate * 100) + '%');
@@ -83,6 +87,7 @@ export class YoutubeVideo {
     this.video.removeEventListener('play', this.boundPlay);
     this.video.removeEventListener('pause', this.boundPause);
     this.video.removeEventListener('ratechange', this.boundSpeed);
+    this.listening = false;
   }
   private round(value, decimals) {
     return value.toFixed(decimals);
