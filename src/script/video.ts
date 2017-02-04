@@ -81,6 +81,7 @@ export class YoutubeVideo {
     this.video.currentTime = 60 * this.minutes + Number(this.seconds);
   }
   private removeListeners() {
+    if (this.video === undefined) { return; }
     this.video.removeEventListener('play', this.boundPlay);
     this.video.removeEventListener('pause', this.boundPause);
     this.video.removeEventListener('ratechange', this.boundSpeed);

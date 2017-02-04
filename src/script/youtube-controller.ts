@@ -21,6 +21,7 @@ export class YoutubeController {
   destroy() {
     document.removeEventListener('DOMContentLoaded', this.boundSetup);
     document.removeEventListener('spfdone', this.boundSetup);
+    this.video.destroy();
   }
   addKeybindings() {
     document.onkeypress = e => this.onKeypress(e);
