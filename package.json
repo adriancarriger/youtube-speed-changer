@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/chrome": "0.0.38",
     "@types/jasmine": "2.5.41",
-    "awesome-typescript-loader": "3.0.0",
+    "awesome-typescript-loader": "3.0.1",
     "chrome-webstore-upload-cli": "1.1.1",
     "conventional-changelog": "1.1.0",
     "copyfiles": "1.2.0",
