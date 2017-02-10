@@ -20,7 +20,7 @@
   "author": "Adrian Carriger <hello@adriancarriger.com> (http://adriancarriger.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/chrome": "0.0.39",
+    "@types/chrome": "0.0.40",
     "@types/jasmine": "2.5.42",
     "awesome-typescript-loader": "3.0.4-rc.0",
     "chrome-webstore-upload-cli": "1.1.1",
