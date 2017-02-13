@@ -1,5 +1,7 @@
 # Youtube Speed Changer [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/lpdejbagojlmdllknjdoonhkieeecpch.svg?maxAge=60)](https://chrome.google.com/webstore/detail/youtube-speed-changer/lpdejbagojlmdllknjdoonhkieeecpch)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/adriancarriger/youtube-speed-changer.svg)](https://greenkeeper.io/)
+
 ⚡ Change the speed of Youtube videos using this simple Chrome extension. Useful for transcribing music or speech.
 
 [![Build Status](http://img.shields.io/travis/adriancarriger/youtube-speed-changer/master.svg?maxAge=60)](https://travis-ci.org/adriancarriger/youtube-speed-changer)
