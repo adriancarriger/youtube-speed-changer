@@ -1,6 +1,6 @@
 {
   "name": "youtube-speed-changer",
-  "version": "1.5.23",
+  "version": "1.5.24",
   "description": "An extension to change the speed of Youtube videos.",
   "main": "contentscript.js",
   "scripts": {
