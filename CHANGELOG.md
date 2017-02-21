@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.26"></a>
+## [1.5.26](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.25...v1.5.26) (2017-02-21)
+
+
+### Bug Fixes
+
+* **package:** update rxjs to version 5.2.0 ([063b2ce](https://github.com/adriancarriger/youtube-speed-changer/commit/063b2ce))
+
+
+
 <a name="1.5.25"></a>
 ## [1.5.25](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.24...v1.5.25) (2017-02-20)
 
