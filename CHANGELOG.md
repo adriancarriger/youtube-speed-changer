@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.27"></a>
+## [1.5.27](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.26...v1.5.27) (2017-02-22)
+
+
+
 <a name="1.5.26"></a>
 ## [1.5.26](https://github.com/adriancarriger/youtube-speed-changer/compare/v1.5.25...v1.5.26) (2017-02-21)
 
