@@ -21,7 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "0.0.42",
-    "@types/jasmine": "2.5.44",
+    "@types/jasmine": "2.5.45",
     "awesome-typescript-loader": "3.1.2",
     "chrome-webstore-upload-cli": "1.1.1",
     "conventional-changelog": "1.1.2",
