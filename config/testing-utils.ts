@@ -5,13 +5,6 @@
  utils for testing. Will change/adjust this once I find a better way of doing
  */
 
-declare module jasmine {
-    interface Matchers {
-        toHaveText(text: string): boolean;
-        toContainText(text: string): boolean;
-    }
-}
-
 beforeEach(() => {
     jasmine.addMatchers({
 
