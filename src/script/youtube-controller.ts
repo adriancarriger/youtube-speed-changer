@@ -40,7 +40,7 @@ export class YoutubeController {
       '120': 'bitSlower'     // x
     };
     const target: any = e.target || e.srcElement;
-    if ( target.tagName === 'INPUT' ) { return; }
+    if ( target.tagName === 'INPUT' || target.className === 'comment-simplebox-text') { return; }
     if (e.keyCode in keyMap) {
       const methodName = keyMap[e.keyCode];
       this.video[methodName]();
