@@ -984,11 +984,7 @@ copyfiles@1.2.0:
     noms "0.0.0"
     through2 "^2.0.1"
 
-core-js@^2.2.0, core-js@^2.4.0:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.4.1.tgz#4de911e667b0eae9124e34254b53aea6fc618d3e"
-
-core-js@^2.5.1:
+core-js@^2.2.0, core-js@^2.4.0, core-js@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
 
@@ -3736,9 +3732,9 @@ source-list-map@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-1.1.2.tgz#9889019d1024cce55cdc069498337ef6186a11a1"
 
-source-map-loader@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.2.1.tgz#48126be9230bd47fad05e46a8c3c2e3d2dabe507"
+source-map-loader@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.2.2.tgz#1249348ff6a66ea64a2957fc98f74cb6bba67505"
   dependencies:
     async "^0.9.0"
     loader-utils "~0.2.2"
