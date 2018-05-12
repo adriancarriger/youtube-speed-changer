@@ -7,7 +7,7 @@
 [![Dependency Status](https://img.shields.io/david/adriancarriger/youtube-speed-changer/master.svg?maxAge=60)](https://david-dm.org/adriancarriger/youtube-speed-changer)
 [![devDependency Status](https://img.shields.io/david/dev/adriancarriger/youtube-speed-changer/master.svg?maxAge=60)](https://david-dm.org/adriancarriger/youtube-speed-changer?type=dev)
 
-- [Complete changelog](https://github.com/adriancarriger/youtube-speed-changer/blob/master/CHANGELOG.md)
+* [Complete changelog](https://github.com/adriancarriger/youtube-speed-changer/blob/master/CHANGELOG.md)
 
 ## Download
 
@@ -15,21 +15,26 @@
 
 ## Features
 
-- Change video speed
-- Set a precise start point
+* Change video speed
+* Set a precise start point
 
 ## Basic Controls
 
-- `v`: Toggles start/stop (from start point)
-- `s`: Slow down 5%
-- `d`: Speed up 5%
-- `t`: Set start point to current video position
-- `q`: Move start point backward 1 second
-- `r`: Move start point forward 1 second
+* `v`: Toggles start/stop (from start point)
+* `s`: Slow down 5%
+* `d`: Speed up 5%
+* `t`: Set start point to current video position
+* `q`: Move start point backward 1 second
+* `r`: Move start point forward 1 second
 
 ## Precision Controls
 
-- `x`: Slow down 1%
-- `c`: Speed up 1%
-- `w`: Move start point backward 0.1 seconds
-- `e`: Move start point forward 0.1 seconds
+* `x`: Slow down 1%
+* `c`: Speed up 1%
+* `w`: Move start point backward 0.1 seconds
+* `e`: Move start point forward 0.1 seconds
+
+## License
+
+youtube-speed-changer is licensed under the MIT Open Source license.
+For more information, see the [LICENSE](LICENSE) file in this repository.
