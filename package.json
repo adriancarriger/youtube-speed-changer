@@ -39,7 +39,7 @@
     "karma-webpack": "4.0.0-rc.2",
     "node-sass": "^4.5.3",
     "source-map-loader": "^0.2.2",
-    "standard-version": "4.2.0",
+    "standard-version": "4.4.0",
     "ts-helpers": "1.1.2",
     "tslint": "^5.7.0",
     "tslint-loader": "3.5.3",
