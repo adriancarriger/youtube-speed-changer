@@ -5,7 +5,7 @@
 [![Build Status](http://img.shields.io/travis/adriancarriger/youtube-speed-changer/master.svg?maxAge=60)](https://travis-ci.org/adriancarriger/youtube-speed-changer)
 [![Codecov](https://img.shields.io/codecov/c/github/adriancarriger/youtube-speed-changer.svg?maxAge=60)](https://codecov.io/gh/adriancarriger/youtube-speed-changer)
 [![Dependency Status](https://img.shields.io/david/adriancarriger/youtube-speed-changer.svg?maxAge=60)](https://david-dm.org/adriancarriger/youtube-speed-changer)
-[![devDependency Status](https://img.shields.io/david/dev/adriancarriger/youtube-speed-changer/master.svg?maxAge=60)](https://david-dm.org/adriancarriger/youtube-speed-changer?type=dev)
+[![devDependency Status](https://img.shields.io/david/dev/adriancarriger/youtube-speed-changer.svg?maxAge=60)](https://david-dm.org/adriancarriger/youtube-speed-changer?type=dev)
 
 * [Complete changelog](https://github.com/adriancarriger/youtube-speed-changer/blob/master/CHANGELOG.md)
 
